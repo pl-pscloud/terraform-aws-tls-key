@@ -12,5 +12,5 @@ resource "aws_key_pair" "pscloud-generated-key" {
 
 resource "local_file" "pscloud-ssh-key" {
   content       = tls_private_key.pscloud-tls-key.private_key_pem
-  filename      = "../../${var.pscloud_company}_key_${var.pscloud_purpouse}.pem"
+  filename      = "${var.pscloud_key_path}${var.pscloud_company}_key_${var.pscloud_purpouse}.pem"
 }
